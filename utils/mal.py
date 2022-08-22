@@ -53,4 +53,19 @@ class PlayerScrapper(Scrapper):
         player_names = self.driver.find_elements(By.XPATH, '//table[@class="items"]/tbody/tr/td[2]')
         player_dob = self.driver.find_elements(By.XPATH, '//table[@class="items"]/tbody/tr/td[4]')
         market_value = self.driver.find_elements(By.XPATH, '//table[@class="items"]/tbody/tr/td[6]')
-        return kit_numbers
+        name=[]
+        position=[]
+        for p in player_names:
+            hold = p.text
+            hold.split('\n')
+            name.append(hold.split('\n')[0])
+            position.append(hold.split('\n')[1])
+
+        df_team_info = pd.DataFrame(columns=['Kit Number', 'Name', 'Position', 'Date Of Birth/Age', 'Market Value'])
+        for i in range(len(kit_numbers)):
+            df_team_info = df_team_info.append({'Kit Number': kit_numbers[i].text,
+                                                'Name': name[i],
+                                                'Position': position[i],
+                                                'Date Of Birth/Age': player_dob[i].text,
+                                                'Market Value': market_value[i].text}, ignore_index=True)
+        return df_team_info
