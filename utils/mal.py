@@ -49,6 +49,7 @@ class PlayerScrapper(Scrapper):
                     xpath_search_bar: str = '//*[@id="schnellsuche"]/input[1]'):
         self.accept_cookies()
         time.sleep(1)
+        print("Searching team..")
         search_bar = self.driver.find_element(By.XPATH, xpath_search_bar)
         search_bar.click()
         time.sleep(1)
