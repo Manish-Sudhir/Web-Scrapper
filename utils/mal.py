@@ -13,6 +13,7 @@ import pandas as pd
 class Scrapper:
     def __init__(self,url: str='https://www.transfermarkt.com/', headless: bool =True):
         if headless:
+            print("Starting...")
             options = Options()
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
@@ -78,4 +79,5 @@ class PlayerScrapper(Scrapper):
                                                 'Position': position[i],
                                                 'Date Of Birth/Age': player_dob[i].text,
                                                 'Market Value': market_value[i].text}, ignore_index=True)
+        print("Done!")
         return df_team_info
