@@ -6,12 +6,22 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 import time
 import pandas as pd
 
 class Scrapper:
-    def __init__(self,url: str='https://www.transfermarkt.com/'):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+    def __init__(self,url: str='https://www.transfermarkt.com/', headless: bool =True):
+        if headless:
+            options = Options()
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument('--headless')
+            options.add_argument("--window-size=1920,1080")
+            options.add_argument("--start-maximised")
+            self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        else:
+            self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.get(url) 
 
     def accept_cookies(self, xpath: str = "//button[contains(@title,'ACCEPT ALL')]"):

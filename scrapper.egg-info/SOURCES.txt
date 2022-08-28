@@ -5,3 +5,4 @@ scrapper.egg-info/dependency_links.txt
 scrapper.egg-info/requires.txt
 scrapper.egg-info/top_level.txt
 utils/__init__.py
+utils/mal.py
