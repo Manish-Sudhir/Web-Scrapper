@@ -55,7 +55,7 @@ To run the project locally, follow these steps:
    ```bash
    python main.py
 
-## Installation
+## Docker Containerization
 
 You can also run the project within a Docker container. A Dockerfile is provided for your convenience. Here's how to use it:
 
