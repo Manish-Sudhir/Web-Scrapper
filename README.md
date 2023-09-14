@@ -5,7 +5,7 @@
 
 This project is a data collection pipeline designed to scrape football team information from a prominent football analytics website ( https://www.transfermarkt.co.uk) using Selenium. The scraped data is then stored in a PostgreSQL database hosted on Amazon AWS, utilizing data engineering philosophies and technologies.
 
-![Transfermarkt Page where data will be scrapped](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/screen.png?raw=true)
+![Transfermarkt Page where data will be scrapped](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/screen.png?raw=true "Transfermarkt Page where data will be scrapped")
 
 ### Project Goals
 
@@ -28,9 +28,9 @@ The project consists of the following main components:
   
 -  `Dockerfile`: The Dockerfile used to containerize the project.
 
-![Created a general web-scrapper class](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/scrapper.png?raw=true)
+![Created a general web-scrapper class](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/scrapper.png?raw=true "Created a general web-scrapper class")
 
-![Scrapper that scrapes for player data](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/scrapper.png?raw=true)
+![Scrapper that scrapes for player data](https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/scrapper.png?raw=true "Scrapper that scrapes for player data")
 
 ## Installation
 
