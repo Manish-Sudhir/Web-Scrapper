@@ -3,7 +3,9 @@
 
 ## Overview
 
-This project is a data collection pipeline designed to scrape football team information from a prominent football analytics website using Selenium. The scraped data is then stored in a PostgreSQL database hosted on Amazon AWS, utilizing data engineering philosophies and technologies.
+This project is a data collection pipeline designed to scrape football team information from a prominent football analytics website ([Transfermarkt] https://www.transfermarkt.co.uk) using Selenium. The scraped data is then stored in a PostgreSQL database hosted on Amazon AWS, utilizing data engineering philosophies and technologies.
+
+![Transfermarkt Page where data will be scrapped]((https://github.com/Manish-Sudhir/Web-Scrapper/blob/main/screen.png?raw=true))
 
 ### Project Goals
 
@@ -23,6 +25,8 @@ The project consists of the following main components:
 - `setup.py`: A Python package configuration file listing project dependencies.
 
 - `requirements.txt`: A file listing the project's dependencies for easy installation.
+  
+-  `Dockerfile`: The Dockerfile used to containerize the project.
 
 ## Installation
 
@@ -46,6 +50,21 @@ To run the project locally, follow these steps:
 2. Run the web-scrapper script
    ```bash
    python main.py
+
+## Installation
+
+You can also run the project within a Docker container. A Dockerfile is provided for your convenience. Here's how to use it:
+
+1. Build the Docker image from the project directory:
+   ```bash
+   docker build -t football-analytics-scraper .
+
+2. Run the Docker container:
+   ```bash
+   docker run football-analytics-scraper
+This will execute the web scraper script within the Docker container.
+
+3.Ensure you have the necessary database and AWS credentials configured within the Docker environment for database interaction.
 
 ## Dependencies
 
